@@ -1,2 +1,7 @@
 <h1> Chats Home</h1>
 
+<% if user_signed_in? %>
+
+<%= link_to "Start Chatting", rooms_path %>
+
+<% end %>
