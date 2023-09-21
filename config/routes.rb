@@ -1,18 +1,3 @@
-# Rails.application.routes.draw do
-#   resources :rooms do 
-#     resources :messages
-#   end
-#   resources :users
-#   devise_for :users
-
-#   root 'home#index'
-#   get 'home/chats' => 'home#chats'
-#   # get 'user/:id', to: 'users#show', as: 'user'
-
-
-# end
- 
-
 Rails.application.routes.draw do
   resources :rooms do
     resources :messages
