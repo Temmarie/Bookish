@@ -11,6 +11,14 @@ class User < ApplicationRecord
 
    after_commit :add_default_avatar, on: %i[create update]
 
+   def avatar_thumbnail
+    avatar.variant(resize_to_limit:[150, 150]).processed
+   end
+
+   def chat_avatar
+    avatar.variant(resize_to_limit:[50, 50]).processed
+   end
+
    private
 
    def add_default_avatar
@@ -19,10 +27,10 @@ class User < ApplicationRecord
       avatar.attach(
         io: File.open(
           Rails.root.join(
-            'app', 'assets', 'images', 'default_avatar.avif'
+            'app', 'assets', 'images', 'default_avatar.jpg'
           )
-        ), filename: 'default_avatar.avif',
-        content_type: 'image/avif'
+        ), filename: 'default_avatar.jpg',
+        content_type: 'image/jpg'
       )
    end
 end
