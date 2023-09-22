@@ -108,3 +108,22 @@ body {
     margin-bottom: 0px;
   }
  
+  .nav-logo{
+    width: 100px;
+  }
+
+  .icon-container {
+    width: 50px;
+    height: 50px;
+    position: relative;
+  }
+  .status-circle {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: grey;
+    border: 2px solid white;
+    bottom: 10px;
+    right: 10px;
+    position: absolute;
+  }
