@@ -7,7 +7,7 @@
 
   <% if user_signed_in? %> 
     <p>Welcome, <%= current_user.email %>!</p> 
-      <%= button_to "Start chatting", "#" %>
+      <%= link_to "Start Chatting", rooms_path %>
       <%= image_tag(current_user.avatar_thumbnail) %>
     <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
     <%= link_to "Edit Profile", edit_user_registration_path, class: 'btn btn-primary' %>
