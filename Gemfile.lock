@@ -147,6 +147,7 @@ GEM
     nokogiri (1.15.4-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    pagy (6.1.0)
     psych (5.1.0)
       stringio
     public_suffix (5.0.3)
@@ -247,6 +248,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   mini_magick
+  pagy (~> 6.1)
   puma (~> 5.0)
   rails (~> 7.0.8)
   ruby-vips
