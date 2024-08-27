@@ -1,9 +1,32 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :rooms do
+    resources :messages
+    collection do
+      post :search
+    end
+  end
 
   devise_scope :user do 
     get "users" to: "devise/sessions#new"
   end
   # Defines the root path route ("/")
   # root "articles#index"
+end
+  #leave_room_path(room)
+  get 'rooms/leave/:id', to: 'rooms#leave', as: 'leave_room'
+    #join_room_path(room)
+  get 'rooms/join/:id', to: 'rooms#join', as: 'join_room'
+
+
+  root 'home#index'
+
+devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
+  }
+
+  get 'user/:id', to: 'users#show', as: 'user'
+
+  get 'home/chats' => 'home#chats'
+
 end
